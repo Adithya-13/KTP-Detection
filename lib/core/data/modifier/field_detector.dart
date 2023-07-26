@@ -1,5 +1,8 @@
 import 'dart:ui';
 
+/// [INFO]
+/// check the field
+
 bool checkNikField(String dataText) {
   final text = dataText.toLowerCase().trim();
   return text == "nik";
@@ -71,6 +74,8 @@ bool checkKewarganegaraanField(String dataText) {
       text == "kewarganegaraan:";
 }
 
+/// [INFO]
+/// check is inside the rect or not
 bool isInside(Rect? rect, Rect? isInside) {
   if (rect == null) {
     return false;
@@ -90,6 +95,8 @@ bool isInside(Rect? rect, Rect? isInside) {
   return false;
 }
 
+/// [INFO]
+/// check is inside the 3 rect (for addresses)
 bool isInside3Rect({Rect? isThisRect, Rect? isInside, Rect? andAbove}) {
   if (isThisRect == null) {
     return false;

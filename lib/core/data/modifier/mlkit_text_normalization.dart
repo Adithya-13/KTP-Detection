@@ -1,5 +1,8 @@
 import 'package:flutter/foundation.dart';
 
+/// [INFO]
+/// to normalize all of the text, in order to recognize the field
+
 String normalizeNikText(String text) {
   String result = text.toUpperCase();
 

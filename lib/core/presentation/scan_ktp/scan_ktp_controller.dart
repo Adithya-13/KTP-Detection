@@ -10,6 +10,8 @@ class ScanKtpController extends StateNotifier<ScanKtpState> {
     this.scanKtpService,
   ) : super(const ScanKtpState());
 
+  /// [INFO]
+  /// show into UI
   Future<void> scanKtpInput(File file) async {
     state = state.copyWith(ktpDataValue: const AsyncLoading());
 

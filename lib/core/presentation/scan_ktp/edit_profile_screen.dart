@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:intl/intl.dart';
@@ -38,6 +40,9 @@ class _EditProfileScreenState extends ConsumerState<EditProfileScreen> {
   @override
   Widget build(BuildContext context) {
     final controller = ref.read(scanKtpControllerProvider.notifier);
+
+    /// [INFO]
+    /// listen the ktpDataValue from controller
     ref.listen(
       scanKtpControllerProvider,
       (previous, next) {
@@ -184,12 +189,17 @@ class _EditProfileScreenState extends ConsumerState<EditProfileScreen> {
               ),
               ElevatedButton(
                   onPressed: () async {
-                    final result = await Navigator.of(context).push(
+                    /// [INFO]
+                    /// Navigate into Camera, and then return the File, and
+                    /// then call the scanKtpInput() for processing OCR
+                    final result = await Navigator.of(context).push<File>(
                       MaterialPageRoute(
-                        builder: (context) => const CustomCamera(),
+                        builder: (context) => const ScanKtpScreen(),
                       ),
                     );
-                    controller.scanKtpInput(result);
+                    if (result != null) {
+                      controller.scanKtpInput(result);
+                    }
                   },
                   child: const Text("Scan Ktp"))
             ],

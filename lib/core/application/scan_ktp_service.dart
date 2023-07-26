@@ -9,6 +9,8 @@ class ScanKtpService {
 
   ScanKtpService({required this.scanKtpRepository});
 
+  /// [INFO]
+  /// get the result of ml kit
   Future<KtpData?> getUserData(File fileImage) async {
     final result = await scanKtpRepository.scanKtp(fileImage: fileImage);
 

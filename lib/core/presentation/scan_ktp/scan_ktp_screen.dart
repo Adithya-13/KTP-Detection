@@ -4,14 +4,14 @@ import 'package:camera/camera.dart';
 import 'package:flutter/material.dart';
 import 'package:ktp_detection/constants/colors.dart';
 
-class CustomCamera extends StatefulWidget {
-  const CustomCamera({super.key});
+class ScanKtpScreen extends StatefulWidget {
+  const ScanKtpScreen({super.key});
 
   @override
-  State<CustomCamera> createState() => _CustomCameraState();
+  State<ScanKtpScreen> createState() => _ScanKtpScreenState();
 }
 
-class _CustomCameraState extends State<CustomCamera> {
+class _ScanKtpScreenState extends State<ScanKtpScreen> {
   late List<CameraDescription> _cameras;
 
   CameraController? controller;
@@ -91,6 +91,8 @@ class _CustomCameraState extends State<CustomCamera> {
             right: 0,
             child: GestureDetector(
               onTap: () async {
+                /// [INFO]
+                /// Get the image, and then return the File
                 final xFile = await controller!.takePicture();
 
                 Navigator.pop(context, File(xFile.path));
@@ -111,6 +113,8 @@ class _CustomCameraState extends State<CustomCamera> {
   }
 }
 
+/// [INFO]
+/// The ViewFinder
 class _FocusRectangle extends StatelessWidget {
   final Color color;
 

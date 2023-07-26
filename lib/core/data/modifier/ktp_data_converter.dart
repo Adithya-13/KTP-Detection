@@ -1,7 +1,8 @@
-
 import 'package:ktp_detection/core/data/modifier/mlkit_text_normalization.dart';
 import 'package:ktp_detection/core/domain/ktp_data.dart';
 
+/// [INFO]
+/// convert all of the result with normalization data
 class KtpDataConverter extends KtpData {
   KtpDataConverter({
     required nik,

@@ -1,17 +1,22 @@
-# ktp_detection
+# KTP Detection
 
-A new Flutter project.
+Flutter AEJ Bootcamp MLKit Text Recognition
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
+This project is to knowing how to build a Flutter App with ML Kit Text Recognition Feature, our references are based on this [article](https://medium.com/tlabcircle/mendeteksi-data-ktp-menggunakan-ml-kit-text-recognition-da16e414af1e), but that article is outdated because some of the packages are discontinued. So in this project are enhancement from that article, we use Camera as a camera, google_mlkit_text_recognition as an OCR, and riverpod as a state management.
 
-A few resources to get you started if this is your first Flutter project:
+You can see the `pubspec.yaml` for all the packages that we use in this Project
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+This project doesn't have a lot of features, bcs this project is experimental how to use MLKit on KTP (Kartu Tanda Penduduk)
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
-# KTP-Detection
+A few resources to get you started:
+
+- [Mendeteksi Data KTP menggunakan ML Kit Text Recognition](https://medium.com/tlabcircle/mendeteksi-data-ktp-menggunakan-ml-kit-text-recognition-da16e414af1e)
+- [Pub Dev - Camera](https://pub.dev/packages/camera)
+- [Pub Dev - MLKit Text Recognition](https://pub.dev/packages/google_mlkit_text_recognition)
+
+I put some Information to you guys, you can search `[INFO]` in Project, then it will show all of the information that help you.
+
+# Important!! don't forget to Setup some library especially Google ML Kit Text Recognition!! and i highly suggest to read the article to get the knowledge how MLKit Works
+

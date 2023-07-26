@@ -1,3 +1,5 @@
+/// [INFO]
+/// model that we use for get the KTP Data
 class KtpData {
   final String nik;
   final String namaLengkap;

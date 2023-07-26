@@ -12,12 +12,20 @@ class ScanKtpRepository {
 
   ScanKtpRepository(this.textRecognizer);
 
+  /// [INFO]
+  /// process the image into text
   Future<KtpData> scanKtp({required File fileImage}) async {
+    /// [INFO]
+    /// turn File into InputImage (format that allowed by MLKit Text Recognition)
     final inputImage = InputImage.fromFile(fileImage);
 
+    /// [INFO]
+    /// processing image
     final RecognizedText visionText =
         await textRecognizer.processImage(inputImage);
 
+    /// [INFO]
+    /// variables to hold the data
     String nikResult = "";
     String nameResult = "";
     String tempatLahirResult = "";
@@ -33,6 +41,8 @@ class ScanKtpRepository {
     String pekerjaanResult = "";
     String kewarganegaraanResult = "";
 
+    /// [INFO]
+    /// variables to hold the Rect of the Field (the data field positioned)
     Rect? nikRect;
     Rect? namaRect;
     Rect? alamatRect;
@@ -46,7 +56,8 @@ class ScanKtpRepository {
     Rect? pekerjaanRect;
     Rect? kewarganegaraanRect;
 
-    //search field rect
+    /// [INFO]
+    /// Search the Field first (not the value)
     try {
       for (int i = 0; i < visionText.blocks.length; i++) {
         for (int j = 0; j < visionText.blocks[i].lines.length; j++) {
@@ -125,6 +136,8 @@ class ScanKtpRepository {
       throw Exception("iteration failed");
     }
 
+    /// [INFO]
+    /// Check if the Field Rect is found
     debugPrint("nik rect $nikRect");
     debugPrint("nama rect $namaRect");
     debugPrint("alamat rect $alamatRect");
@@ -138,6 +151,8 @@ class ScanKtpRepository {
     debugPrint("pekerjaan rect $pekerjaanRect");
     debugPrint("kewarganegaraan rect $kewarganegaraanRect");
 
+    /// [INFO]
+    /// after get the Field Rect, we find the value based on field rect
     try {
       for (int i = 0; i < visionText.blocks.length; i++) {
         for (int j = 0; j < visionText.blocks[i].lines.length; j++) {
@@ -150,9 +165,10 @@ class ScanKtpRepository {
           }
 
           if (isInside3Rect(
-              isThisRect: data.boundingBox,
-              isInside: namaRect,
-              andAbove: tempatTanggalLahirRect)) {
+            isThisRect: data.boundingBox,
+            isInside: namaRect,
+            andAbove: tempatTanggalLahirRect,
+          )) {
             if (data.text.toLowerCase() != "nama") {
               debugPrint("------ name");
               nameResult = ("$nameResult ${data.text}").trim();
@@ -248,6 +264,8 @@ class ScanKtpRepository {
       throw Exception("iteration failed ");
     }
 
+    /// [INFO]
+    /// check the result value
     debugPrint("result before normalization");
     debugPrint("nik : $nikResult");
     debugPrint("nama : $nameResult");
@@ -262,6 +280,8 @@ class ScanKtpRepository {
     debugPrint("status kawin : $statusKawinResult");
     debugPrint("kewarganegaraan : $kewarganegaraanResult");
 
+    /// [INFO]
+    /// return with normalization (because some result may not good detection)
     return KtpDataConverter.from(
         namaLengkap: nameResult,
         tanggalLahir: tglLahirResult,

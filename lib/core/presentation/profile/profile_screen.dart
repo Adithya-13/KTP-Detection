@@ -56,11 +56,13 @@ class ProfileScreen extends StatelessWidget {
                             ),
                           );
                         },
-                        child: Text("Confirm Id",
-                            style: TextStyle(
-                                fontWeight: FontWeight.w600,
-                                fontSize: 14,
-                                color: appColorAccent0Gray)),
+                        child: Text(
+                          "Confirm Id",
+                          style: TextStyle(
+                              fontWeight: FontWeight.w600,
+                              fontSize: 14,
+                              color: appColorAccent0Gray),
+                        ),
                       ),
                     )
                   ],

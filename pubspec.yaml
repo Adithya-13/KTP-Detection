@@ -36,7 +36,9 @@ dependencies:
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.2
   equatable: ^2.0.5
+  # for camera to get the KTP
   camera: ^0.10.5+2
+  # for processing images into text (OCR)
   google_mlkit_text_recognition: ^0.9.0
   intl: ^0.18.1
   flutter_riverpod: ^2.3.6
