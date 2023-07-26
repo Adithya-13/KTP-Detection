@@ -8,6 +8,8 @@ This project is to knowing how to build a Flutter App with ML Kit Text Recogniti
 
 You can see the `pubspec.yaml` for all the packages that we use in this Project
 
+https://github.com/Adithya-13/KTP-Detection/assets/62298956/5d0afc20-529e-40c6-9658-18451b5b3921
+
 This project doesn't have a lot of features, bcs this project is experimental how to use MLKit on KTP (Kartu Tanda Penduduk)
 
 A few resources to get you started:
@@ -18,5 +20,4 @@ A few resources to get you started:
 
 I put some Information to you guys, you can search `[INFO]` in Project, then it will show all of the information that help you.
 
-# Important!! don't forget to Setup some library especially Google ML Kit Text Recognition!! and i highly suggest to read the article to get the knowledge how MLKit Works
-
+## Important!! don't forget to Setup some library especially Google ML Kit Text Recognition!! and i highly suggest to read the article to get the knowledge how MLKit Works
